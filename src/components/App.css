@@ -1,0 +1,21 @@
+#root {
+  /* max-width: 1280px;/ */
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
