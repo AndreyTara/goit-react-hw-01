@@ -19,7 +19,7 @@ function App() {
         />
       ))}
       <FriendList friends={friends} />
-      <TransactionHistory props={transactions} />
+      <TransactionHistory transactions={transactions} />
     </>
   );
 }

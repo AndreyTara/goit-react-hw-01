@@ -1,17 +1,7 @@
 import css from "./TransactionHistory.module.css";
+import Transaction from "./../Transaction/Transaction";
 
-function Transaction({ prop }) {
-  const { id, type, amount, currency } = prop;
-  return (
-    <tr className={css.tr} key={id}>
-      <td className={css.td}>{type}</td>
-      <td className={css.td}>{amount}</td>
-      <td className={css.td}>{currency}</td>
-    </tr>
-  );
-}
-
-function TransactionHistory({ props }) {
+function TransactionHistory({ transactions }) {
   return (
     <div className={css.container}>
       <table className={css.table}>
@@ -23,11 +13,12 @@ function TransactionHistory({ props }) {
           </tr>
         </thead>
         <tbody className={css.tbody}>
-          {props.map((prop) => {
+          {transactions.map((transaction) => {
+            const { id } = transaction;
             return (
-              <>
-                <Transaction prop={prop} />
-              </>
+              <tr className={css.tr} key={id}>
+                <Transaction transaction={transaction} />
+              </tr>
             );
           })}
         </tbody>
